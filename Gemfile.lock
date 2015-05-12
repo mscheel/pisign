@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    betabrite (1.0.5)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  betabrite
