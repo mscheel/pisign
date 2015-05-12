@@ -8,7 +8,7 @@ require 'usb'
 
 ## Allocate Memory
 
-  bb = BetaBrite::Serial.new('/dev/ttyUSB0') do |sign|
+  bb = BetaBrite::Usb.new('/dev/ttyUSB0') do |sign|
     sign.allocate do |memory|
       memory.text('A', 4096)
       memory.string('0', 64)
@@ -19,11 +19,11 @@ require 'usb'
 
 ## Reset the sign
 
-  BetaBrite::Serial.new('/dev/ttyUSB0').clear_memory!
+  BetaBrite::Usb.new('/dev/ttyUSB0').clear_memory!
   
 ## Write a text file
 
-  bb = BetaBrite::Serial.new('/dev/ttyUSB0') do |sign|
+  bb = BetaBrite::Usb.new('/dev/ttyUSB0') do |sign|
     sign.textfile do
       print left_arrow + string("Hello ").green
       print string(" world.").green + sail_boat
